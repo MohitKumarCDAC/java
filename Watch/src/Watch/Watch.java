@@ -1,9 +1,10 @@
 package Watch;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Watch {
+public class Watch implements Serializable {
 	private int SeraialNumber;
 	private static int count=1;
 	private int ID;
@@ -46,15 +47,7 @@ public class Watch {
 		ID = iD;
 	}
 
-
-
-	@Override
-	public String toString() {
-		return "Watch [ID=" + ID + ", brand=" + brand + ", stock=" + stock + ", price=" + price + ", discount="
-				+ discount + ", stocklistingDate=" + stocklistingDate + ", stockUpdateDate=" + stockUpdateDate
-				+ ", materialType=" + materialType + ", category=" + category + ", shape=" + shape + ", style=" + style
-				+ "]";
-	}
+	
 
 	@Override
 	//(here we use == because id is int if id is string then we use equals method)
@@ -66,6 +59,16 @@ public class Watch {
 			 return this.ID==other.ID;
 		}
 		return false;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Watch [SeraialNumber=" + SeraialNumber + ", ID=" + ID + ", brand=" + brand + ", stock=" + stock
+				+ ", price=" + price + ", discount=" + discount + ", stocklistingDate=" + stocklistingDate
+				+ ", stockUpdateDate=" + stockUpdateDate + ", materialType=" + materialType + ", category=" + category
+				+ ", shape=" + shape + ", style=" + style + "]";
 	}
 
 
