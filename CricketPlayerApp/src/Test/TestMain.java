@@ -1,6 +1,7 @@
 package Test;
 
 import java.util.ArrayList;
+import static utils.IOUtils.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -24,6 +25,7 @@ public class TestMain {
 				System.out.println("3.Search Records:");
 				System.out.println("4.Update Rating");
 				System.out.println("5.Display All Cricketers in sorted form by rating.");
+				System.out.println("6.Data Rrestore Into the File:");
 				System.out.println("0.Exit");
 				
 				System.out.println("Choose Ant Option:");
@@ -34,6 +36,10 @@ public class TestMain {
 					case 1:
 						//add cricketplayer in list
 						addPlayer(list);
+						System.out.println("Enter File Name:");
+						storeDataIntoFile(list, sc.next());
+						System.out.println("Data store into file:");
+						
 						break;
 					case 2:
 						//display from list
@@ -50,6 +56,14 @@ public class TestMain {
 					case 5:
 						Collections.sort(list, new comparingByrating());
 						list.forEach(i->System.out.println(i));
+						break;
+					case 6:
+						//read from the binary file
+						System.out.println("ENter File Name:");
+						Object details=restoreData(sc.next());
+						System.out.println(details.getClass());
+						System.out.println(details);
+						System.out.println("Data Restored:");
 						break;
 					case 0:
 						System.out.println("bye...bye");

@@ -1,6 +1,8 @@
 package com.app.cricketer;
 
-public class CricketPlayer {
+import java.io.Serializable;
+
+public class CricketPlayer implements Serializable {
 //String name,int age,String email_id,String Phone,int rating
 	//data members
 	private String name;
