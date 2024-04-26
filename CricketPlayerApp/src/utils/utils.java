@@ -22,6 +22,7 @@ public class utils {
 		validateEmail(list, Email_Id);
 		System.out.println("Enter Your Phone Number:");
 		String phone=sc.next();
+		validatePhone(list, phone);
 		System.out.println("Enter the Rating Of Player:");
 		int rating=sc.nextInt();
 		validateRating(list, rating);

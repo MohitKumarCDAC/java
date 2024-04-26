@@ -36,5 +36,17 @@ public class Validation {
 			throw new CricketPlayerException("Rating is between 1 to 10!pls give in this range. ");
 		}
 	}
+	public static void validatePhone(List<CricketPlayer>list,String phone)throws CricketPlayerException
+	{
+		String regex = "^\\d{10}$";
+		  if( phone.matches(regex))
+		  {
+			  System.out.println("Valid Phone:");
+		  }
+		  else
+		  {
+			  throw new CricketPlayerException("Invalid Phone Number its greater than 10 digits:");
+		  }
+	}
 
 }
