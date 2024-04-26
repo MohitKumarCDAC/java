@@ -10,6 +10,9 @@ import com.app.Customer.*;
 import Utils.CustomerUtils;
 import Utils.CustomerValidation;
 import static Utils.CustomerData.*;
+import static Utils.IOUtils.restoreDetails;
+import static Utils.IOUtils.storeCustomerDetails;
+
 import custom_ordering.CustomerAscDOBComparetor;
 
 public class CustomerApp {
@@ -27,6 +30,7 @@ public class CustomerApp {
 				System.out.println("4.Update Password");
 				System.out.println("5.Unsbscribe Customer");
 				System.out.println("6.sord by ascending order:");
+				System.out.println("7.Restore Data into files:");
 				System.out.println("0.exit");
 
 				System.out.println("Enter Choice:");
@@ -35,7 +39,11 @@ public class CustomerApp {
 					switch (choice) {
 					case 1:
 						// register customer
-						CustomerUtils.signup(map);
+							CustomerUtils.signup(map);
+							System.out.println("Enter File Name:");
+							storeCustomerDetails(map, sc.next());
+							System.out.println("Data Saved into file");
+						
 						break;
 
 					case 2:
@@ -63,6 +71,13 @@ public class CustomerApp {
 						//here sorting is proceed by key(email) based
 						for (Customer a : sortedMap.values())
 							System.out.println(a);
+						break;
+					case 7:
+						//restore data into files
+						System.out.println("Enter File name:");
+						Object details=restoreDetails(sc.next());
+						System.out.println(details.getClass());
+						System.out.println(details);
 						break;
 					case 0:
 						System.out.println("Bye.....Bye!!!!");

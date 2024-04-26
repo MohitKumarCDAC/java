@@ -19,6 +19,7 @@ public class StoreCustomerDetails {
 			storeCustomerDetails(customerMap, sc.next());
 			System.out.println("Data Saved into file");
 			
+			
 		}catch (Exception e) {
 			System.out.println(e);
 		}

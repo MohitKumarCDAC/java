@@ -8,6 +8,7 @@ import com.app.Customer.Customer;
 import com.app.Customer.ServicePlan;
 
 import static Utils.CustomerValidation.*;
+import static Utils.IOUtils.storeCustomerDetails;
 
 import CustomerException.CustomerException;
 
@@ -44,6 +45,7 @@ public class CustomerUtils {
 		String dob=sc.next();
 		map.put(email,new Customer(fname,lname,email,pass,registrationamount,LocalDate.parse(dob),plantype));
 		System.out.println("Registered!");
+		
 	}
 	public static void Display(Map<String,Customer>map)throws CustomerException
 	{
