@@ -1,10 +1,11 @@
 package com.app.customer;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import Exception_Customer.CustomerException;
 
-public class Customer {
+public class Customer implements Serializable{
 	private int CustomerId;
 	private static int count=1;//its use of id auto increment
 	private String FirstName;

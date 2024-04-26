@@ -1,6 +1,7 @@
 package tester;
 //mohit kumar mkg97274@gmail.com 123456 1000 1998-10-12 silver
 import java.time.LocalDate;
+import static utils.IOUtils.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,6 +36,8 @@ public class CustomerApp {
 				System.out.println("4.Update Password");
 				System.out.println("5.Un subscribe customer");
 				System.out.println("6.sort record by ascOrder:");
+				System.out.println("7.Sort by DOB:");
+				System.out.println("8.Data Restore In the Binary File:");
 				System.out.println("0.exit");
 				
 				System.out.println("Select options:");
@@ -44,6 +47,10 @@ public class CustomerApp {
 				case 1:
 
 					utils.CustomerUtils.signup(custlist);
+					System.out.println("Enter File name");
+					storedataInFile(custlist, sc.next());
+					System.out.println("Data Store in file in Binary Format:");
+					
 					break;
 				case 2:
 					
@@ -71,6 +78,14 @@ public class CustomerApp {
 					Collections.sort(custlist,new sortByDob());
 					//use forEach method(its very esy to display the data)
 					custlist.forEach(i->System.out.println(i));
+					break;
+				case 8:
+					//restore data from binary file
+					System.out.println("Enter File Name:");
+					Object details=restoreDataFile(sc.next());
+					System.out.println(details.getClass());
+					System.out.println(details);
+					break;
 				
 				case 0:
 					exit=true;
