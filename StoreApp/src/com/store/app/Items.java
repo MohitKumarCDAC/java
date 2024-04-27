@@ -12,10 +12,10 @@ public class Items implements Serializable{
 */	
 	private String ItemCode;
 	private String Description;
-	private int price;
+	private double price;
 	private LocalDate date;
 	
-	public Items(String itemCode, String description, int price, LocalDate date) {
+	public Items(String itemCode, String description, double price, LocalDate date) {
 		super();
 		ItemCode = itemCode;
 		Description = description;

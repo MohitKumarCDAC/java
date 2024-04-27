@@ -26,7 +26,7 @@ public class utils {
 		String Desc=sc.nextLine();
 		
 		System.out.println("Enter Price:");
-		int price=sc.nextInt();
+		double price=sc.nextDouble();
 		
 		System.out.println("Enter Shipment Date: ");
 		String date=sc.next();
