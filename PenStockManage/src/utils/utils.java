@@ -63,17 +63,23 @@ public class utils {
 		String color=sc.next();
 		System.out.println("Enter Ink color:");
 		InkColor inkcolor=validateInkColor(sc.next());
+		boolean penFound=false;
 		for(Pen p :penlist)
 		{
 			if(p.getBrand().equals(brand)&&p.getMaterial().equals(material)&&p.getColor().equals(color)&&p.getInkColor().equals(inkcolor))
 			{
+				penFound =true;
 				System.out.println("Enter new stock");
 				//int stock=sc.nextInt();
 				p.setStock(sc.nextInt());
 				p.setStockUpdateDate(LocalDate.now());
+				break;
 			}
-		}
 		
+		}
+		if (!penFound) {
+	        throw new PenException("Pen not found for the given criteria.");
+	    }
 	}
 	/*Set discount of 20% for all the pens which are not at all sold in last 3 months
 	In this you can set the discount value for all such pens OR apply discount n update price as well*/
