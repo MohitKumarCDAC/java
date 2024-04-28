@@ -32,13 +32,17 @@ public class utils {
 		 System.out.println("Enter Price:");
 		 int price=sc.nextInt();
 		 
+		 System.out.println("Enter Stock");
+		 int stock=sc.nextInt();
+		 
 //		 System.out.println("Enter Discount of pen:");
 //			double discount=sc.nextInt();
 		 
 		 System.out.println("Enter StocListingDate:");
 		LocalDate date=validateDate(sc.next());
 		
-		penlist.add(new Pen(brand, color, inkcolor, material, price,LocalDate.now(),date, price, 0.0));
+		//penlist.add(new Pen(brand, color, inkcolor, material, price,LocalDate.now(),date, price, 0.0));
+		penlist.add(new Pen(brand, color, inkcolor, material, stock, LocalDate.now(), date, price, 0.0));
 			
 	}
 	
